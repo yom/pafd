@@ -1,0 +1,9 @@
+lib/PAF/Config.pm
+lib/PAF/Plugin.pm
+lib/PAF/Plugin/Default.pm
+lib/PAF/Server.pm
+lib/PAF/Util.pm
+Makefile.PL
+MANIFEST
+pafd
+README
