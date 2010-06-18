@@ -1,0 +1,97 @@
+#!/usr/bin/perl
+
+eval 'exec /usr/bin/perl  -S $0 ${1+"$@"}'
+    if 0; # not running under some shell
+# vim:ts=4 sw=4 ft=perl et:
+
+use strict;
+use warnings;
+use lib 'lib';
+use PAF::Server;
+
+$0 = "pafd";
+
+my $s = PAF::Server->server;
+$s->run;
+
+1;
+
+__END__
+
+=head1 NAME
+
+pafd - Pluggable Asynchronous FastCGI Daemon
+
+=head1 SYNOPSIS
+
+ $ pafd [OPTIONS]
+
+=head1 OPTIONS
+
+=over
+
+=item C<< -c | --config=<file> >>
+
+Use given config file (Config::Std syntax)
+
+Default: /etc/pafd/pafd.conf
+
+=item C<< -s | --socket=<socket> >>
+
+Use given socket
+
+Default: /var/run/pafd/pafd.sock
+
+=item C<< -p | --pid=<file> >>
+
+Write PID to given file
+
+Default: /var/run/pafd/pafd.pid
+
+=item C<< -u | --user=UID >>
+
+Run as UID
+
+Default: nobody
+
+=item C<< -g | --group=GID >>
+
+Run as GID
+
+Default: nogroup
+
+=item C<< -d | --daemonize >>
+
+Run as daemon
+
+Default: No
+
+=item C<< -v | --verbose >>
+
+Print debugging messages
+
+Default: No
+
+=item C<< -h | --help >>
+
+Print usage
+
+=item C<< -m | --man >>
+
+Print complete documentation
+
+=back
+
+=head1 AUTHOR
+
+Guillaume Blairon E<lt>L<g@yom.be>E<gt>
+
+=head1 BUGS
+
+Please report any to Guillaume Blairon E<lt>L<g@yom.be>E<gt>
+
+=head1 LICENSE
+
+Licensed for use and redistribution under the same terms as Perl itself.
+
+=cut
